@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<script src='source/head.js' title="404" icon="icon" stylesheet="styles"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<div class="background-container"></div>
+
+	<div class="content-container">
+		<include src="includeables/header.html"></include>
+		<include src="includeables/404.html"></include>
+		<include src='includeables/footer.html'></include>
+	</div>
+
+	<script src='source/allowIncludeImport.js'></script>
+	<!-- swag -->
+	<script type="module">
+	import { rainbowCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+	new rainbowCursor();
+	</script>
+</html>

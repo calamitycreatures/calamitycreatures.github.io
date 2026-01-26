@@ -1,0 +1,42 @@
+.background-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 110%;
+	height: 110%;
+	background: url('assets/bg.png') center/cover no-repeat;
+	z-index: -1;
+}
+
+.content-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem;
+	position: relative;
+	z-index: 0;
+}
+
+.download-card {
+	background-color: #78565d;
+	border: 4px solid #543b46;
+}
+
+.download-btn {
+	transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+	background: #a87c7c;
+}
+
+.platform-icon-bg {
+	background-color: #543b46;
+}
+
+html {
+    scrollbar-width: auto;
+    scrollbar-color: #78565d #543b46;
+}
