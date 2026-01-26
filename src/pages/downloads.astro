@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import DownloadCard from '../components/downloadButton.astro';
+
+import windowsIcon from '../assets/windows.png';
+import linuxIcon from '../assets/linux.png';
+import gamebananaIcon from '../assets/gamebanana.gif';
+import githubIcon from '../assets/github.png';
+---
+
+<BaseLayout
+  description="Official site for the Calamity Creatures mod"
+>
+
+<div class="max-w-5xl w-full mx-auto px-4">
+  <div class="relative mb-8">
+    <div class="absolute -top-20 bg-[#78565d]/90 text-white px-4 py-4 shadow-xl shadow-gray-950/40 backdrop-blur-md rounded-t-2xl border-4 border-[#543b46] border-b-0 whitespace-nowrap max-w-full sm:max-w-fit">
+      <h1 class="text-3xl md:text-5xl font-bold">Download links</h1>
+    </div>
+
+    <div class="mt-6 bg-[#78565d]/90 text-white rounded-2xl p-8 shadow-xl shadow-gray-950/40 backdrop-blur-md border-4 border-[#543b46] pt-8 rounded-tl-none rounded-b-none border-tl-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+        <DownloadCard
+          icon={windowsIcon}
+          name="Windows"
+          desc="Standalone Windows executable"
+          buttonTxt="Download"
+          link="https://github.com/picnicpip/calamityCreatures/releases/download/Release/windowsBuild.zip"
+          isExternal={false}
+        />
+        <DownloadCard
+          icon={linuxIcon}
+          name="Linux"
+          desc="Standalone Linux executable"
+          buttonTxt="Download"
+          link="https://github.com/picnicpip/calamityCreatures/releases/download/Release/linuxBuild.zip"
+          isExternal={false}
+        />
+      </div>
+
+        <h3 class="text-2xl font-bold mb-2 text-left">Alternative downloads</h3>
+        <div class="border-2 border-[#543b46] mb-6"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <DownloadCard
+          icon={gamebananaIcon}
+          name="GameBanana"
+          desc="GameBanana mirror"
+          buttonTxt="Download"
+          link="https://gamebanana.com/mods/647033"
+          isExternal
+        />
+        <DownloadCard
+          icon={githubIcon}
+          name="GitHub"
+          desc="Get the latest releases and source code"
+          buttonTxt="Open Repository"
+          link="https://github.com/picnicpip/calamityCreatures"
+          isExternal
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+</BaseLayout>

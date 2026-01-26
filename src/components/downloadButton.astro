@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  icon: ImageMetadata;
+  name: string;
+  desc: string;
+  buttonTxt: string;
+  link: string;
+  isExternal?: boolean;
+}
+
+const { icon, name, desc, buttonTxt, link, isExternal = false } = Astro.props;
+
+const linkAttrs = isExternal 
+	? { target: "_blank", rel: "noopener noreferrer" } 
+  : {};
+---
+
+<div class="download-card rounded-xl p-4 bg-[#3a2a33]/50 border border-[#543b46] hover:border-[#78565d] transition-all">
+  <div class="flex items-center mb-2">
+    <div class="platform-icon-bg p-2 rounded-lg mr-3 bg-[#4a3540]/70">
+      <Image 
+        src={icon} 
+        alt={`${name} platform icon`} 
+        class="w-6 h-6 block"
+        loading="eager"
+        fetchpriority="high"
+        width="24"
+        height="24"
+      />
+    </div>
+    <h3 class="text-2xl font-bold text-white">{name}</h3>
+  </div>
+
+  <p class="text-[#e0e0e0] mb-4">{desc}</p>
+
+  <a 
+    href={link} 
+    class="download-btn bg-[#9c6b6c] hover:bg-[#b07d7e] text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center w-full transition-colors shadow-md hover:shadow-lg"
+    {...linkAttrs}
+  >
+    {buttonTxt}
+  </a>
+</div>

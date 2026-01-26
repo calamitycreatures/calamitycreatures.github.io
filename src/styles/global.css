@@ -545,15 +545,6 @@
     }
   }
 }
-.background-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background: url('assets/bg.png') center/cover no-repeat;
-  z-index: -1;
-}
 .content-container {
   min-height: 100vh;
   display: flex;
