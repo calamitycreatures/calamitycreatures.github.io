@@ -1,0 +1,40 @@
+---
+interface Props {
+  title?:string;
+	insert?:string;
+}
+
+const {title, insert} = Astro.props;
+const titleExists = title != null ? `rounded-tl-none` : ``;
+---
+
+<div class={insert}>
+
+<div class="relative mb-8">
+
+	{title != null && (
+    <div class="absolute -top-20 bg-[#78565d]/90 text-white px-4 py-4 shadow-xl shadow-gray-950/40 backdrop-blur-md rounded-t-2xl border-4 border-[#543b46] border-b-0 whitespace-nowrap max-w-full sm:max-w-fit">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" style="user-select: none;">{title}</h2>
+    </div>
+	)}
+
+  <div class=`
+		mt-6
+		p-8
+		pt-8
+		text-white
+		backdrop-blur-md
+		bg-[#78565d]/90
+		shadow-xl
+		shadow-gray-950/40
+		border-4
+		border-[#543b46]
+		border-tl-0
+		rounded-2xl
+    ${titleExists}
+		rounded-b-none`>
+		<slot/>
+	</div>
+</div>
+
+</div>

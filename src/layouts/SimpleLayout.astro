@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+import Window from '@components/Window.astro';
+
+import {SITE} from '@config/SiteConfig.astro';
+
+interface Props {
+  title?:string;
+  windowTitle?:string;
+  windowDescription?:string;
+  windowIcon?:ImageMetadata;
+  bgImage?:ImageMetadata;
+  bannerImage?:ImageMetadata;
+}
+
+const {
+	title,
+	windowTitle = SITE.title,
+  windowDescription = SITE.description,
+  windowIcon = SITE.icon,
+  bgImage = SITE.bgImage,
+  bannerImage = SITE.bannerImage
+} = Astro.props;
+---
+
+<BaseLayout title={windowTitle} description={windowDescription} icon={windowIcon} bgImage={bgImage} bannerImage={bannerImage}>
+  <Window>
+    <p class="text-2xl font-bold text-center" style="user-select: none;">{title}</p>
+  </Window>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  name:string;
+  role:string;
+  last?:boolean;
+}
+
+const {name, role, last = false} = Astro.props;
+---
+
+<h3 class="text-2xl font-bold text-center">{role}</h3>
+<p class={`text-[#e0e0e0] text-center mb-${last ? '0' : '4'}`}>{name}</p>
+
+{!last && (<div class="border-2 border-[#543b46] mb-4"></div>)}
